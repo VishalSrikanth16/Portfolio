@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import "./background.css";
 
 const MessageModal = ({ message, type, onClose }) => {
   const isSuccess = type === "success";
@@ -49,7 +48,7 @@ const ContactForm = ({ onClose }) => {
     setStatusMessage(null); 
 
     try {
-      const response = await fetch("http://localhost:3001/api/send-email", {
+      const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
